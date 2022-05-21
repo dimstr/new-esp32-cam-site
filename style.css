@@ -26,9 +26,8 @@ pad-theme {
   img {
     width: 500px;
   }
-  pad-theme-data{
-    width: 100px;
-    height: 100px;
+  html {
+    flex-direction: column;
   }
 }
 
