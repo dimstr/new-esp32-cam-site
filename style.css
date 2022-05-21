@@ -27,7 +27,9 @@ pad-theme {
 }
 
 @media screen and (max-width: 500px){
-  display: inline-block;
-  text-align: center;
+  html {
+    display: inline-block;
+    text-align: center;
+  }
 }
 
