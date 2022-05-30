@@ -33,7 +33,21 @@
   <script src="app.js" defer></script>
 </head>
 
-<body>
+<body id="opa">
+  <script>
+    document.getElementById('opa').style.display = 'none'
+    function displayOpa() {
+      var pass = prompt("Enter password");
+      if (pass != "12345678") {
+        document.getElementById('opa').style.display = 'none'
+      } else {
+        document.getElementById('opa').style.display = 'inline'
+
+      }
+    }
+
+    window.onload = displayOpa;
+  </script>
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">ESP32-CAM</a>
