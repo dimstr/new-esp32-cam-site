@@ -37,9 +37,10 @@
   <script>
     document.getElementById('opa').style.display = 'none'
     function displayOpa() {
-      var pass = prompt("Enter password");
+      var pass = prompt("Введите пароль");
       if (pass != "12345678") {
         document.getElementById('opa').style.display = 'none'
+        window.location.reload()
       } else {
         document.getElementById('opa').style.display = 'inline'
 
