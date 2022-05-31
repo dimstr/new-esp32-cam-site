@@ -38,11 +38,13 @@
     document.getElementById('opa').style.display = 'none'
     function displayOpa() {
       var pass = prompt("Введите пароль");
-      if (pass != "12345678") {
+      if (pass == "12345678") {
+        document.getElementById('opa').style.display = 'inline'
+      } else if (pass == "") {
+        alert("Не правильный пароль. Для новой попытки перезагрузите страницу.")
+      } else {
         document.getElementById('opa').style.display = 'none'
         window.location.reload()
-      } else {
-        document.getElementById('opa').style.display = 'inline'
 
       }
     }
