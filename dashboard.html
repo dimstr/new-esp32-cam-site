@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -109,4 +110,118 @@
     </div>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <title>Document</title>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                darkMode: 'class',
+                screens: {
+                    'tablet': '640px',
+                    // => @media (min-width: 640px) { ... }
+
+                    'laptop': '1024px',
+                    // => @media (min-width: 1024px) { ... }
+
+                    'desktop': '1280px',
+                    // => @media (min-width: 1280px) { ... }
+                },
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn-st {
+             @apply bg-blue-600 hover:bg-blue-700 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md focus:ring;
+              }
+            }
+        @layer base {
+            p {
+             @apply dark:text-white
+            }
+        }
+  </style>
+</head>
+
+<body class="dark dark:bg-zinc-800">
+    <div class="grid place-items-center my-12">
+        <div class="bg-white dark:bg-zinc-900 rounded-md pt-5 pb-8 px-7" id="page">
+
+            <h2 class="text-2xl font-bold dark:text-white">Панель управления</h2>
+
+            <div class="py-3"></div>
+
+            <div class="grid tablet:grid-cols-2 tablet:gap-4 gap-y-4">
+
+                <div class="bg-gray-100 dark:bg-zinc-800 rounded-md py-4 px-5 grid place-items-center">
+
+                    <img id="img_01">
+                    <p>Изображение было получено
+                        <span id="date-time_01"></span>
+                    </p>
+                    <div class="p-2"></div>
+                    <img id="img_02">
+                    <p>Изображение было получено
+                        <span id="date-time_02"></span>
+                    </p>
+
+                </div>
+
+                <div class="bg-gray-100 dark:bg-zinc-800 rounded-md py-4 px-5 grid place-items-center">
+                    <div class="grid grid-cols-3 gap-4 tablet:gap-4 gap-y-4">
+
+                        <div class="whitespace-nowrap"></div>
+                        <button class="btn-st">
+                            <span class="material-symbols-rounded">
+                                north
+                            </span>
+                        </button>
+                        <div class="whitespace-nowrap"></div>
+
+                        <button class="btn-st">
+                            <span class="material-symbols-rounded">
+                                west
+                            </span>
+                        </button>
+                        <button class="btn-st">
+                            <span class="material-symbols-rounded">
+                                radio_button_unchecked
+                            </span>
+                        </button>
+                        <button class="btn-st">
+                            <span class="material-symbols-rounded">
+                                east
+                            </span>
+                        </button>
+
+                        <div class="whitespace-nowrap"></div>
+                        <button class="btn-st">
+                            <span class="material-symbols-rounded">
+                                south
+                            </span>
+                        </button>
+                        <div class="whitespace-nowrap"></div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+>>>>>>> Stashed changes
 </html>
