@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
             setupUI(user);
         } else {
             console.log("user logged out");
-  Alert("   hn  ");
+  alert("   hn  ");
             setupUI();
         }
     });
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         // get user info
-        const email = 'web@mail.com';
+        const email = 'web@app.com';
         const password = loginForm['input-password'].value;
         // log the user in
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
