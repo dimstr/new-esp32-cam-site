@@ -51,9 +51,9 @@
     <div class="grid place-items-center my-12">
         <div class="bg-white dark:bg-zinc-900 rounded-md pt-5 pb-8 px-7" id="page">
 
-            <div>
+            <div class="row">
                 <h2 class="text-2xl font-bold dark:text-white">Панель управления</h2>
-                <button class="btn-st">Выход</button>
+                <button class="btn-st" id="logout-link">Выход</button>
             </div>
 
             <div class="py-3"></div>
@@ -135,6 +135,11 @@
                 console.log("user logged out");
                 window.location.replace("https://dimstr.github.io/new-esp32-cam-site/auth");
             }
+        });
+        const logout = document.querySelector('#logout-link');
+        logout.addEventListener('click', (e) => {
+            e.preventDefault();
+            auth.signOut();
         });
     </script>
 </body>
