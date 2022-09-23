@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
             setupUI(user);
         } else {
             console.log("user logged out");
-            window.location.replace("http://stackoverflow.com");
+            window.location.replace("https://dimstr.github.io/new-esp32-cam-site/auth");
             setupUI();
         }
     });
