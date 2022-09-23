@@ -23,6 +23,21 @@
     firebase.initializeApp(firebaseConfig);
     var storage = firebase.storage();
     var storageRef = storage.ref();
+    document.addEventListener("DOMContentLoaded", function(){
+
+    // listen for auth status changes
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            console.log("user logged in");
+            console.log(user);
+            setupUI(user);
+        } else {
+            console.log("user logged out");
+            window.location.replace("http://stackoverflow.com");
+
+        }
+    });
+   });
   </script>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
