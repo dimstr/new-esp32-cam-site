@@ -5,9 +5,11 @@ document.addEventListener("DOMContentLoaded", function(){
         if (user) {
             console.log("user logged in");
             console.log(user);
+            alert("LOG IN");
             setupUI(user);
         } else {
             console.log("user logged out");
+            window.location.replace("http://stackoverflow.com");
             setupUI();
         }
     });
