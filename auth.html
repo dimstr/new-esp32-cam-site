@@ -76,7 +76,7 @@
         const loginForm = document.querySelector('#login-form');
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const email = 'web@mail.com';
+            const email = 'web@app.com';
             const password = loginForm['input-password'].value;
             auth.signInWithEmailAndPassword(email, password).then((cred) => {
                 loginForm.reset();
