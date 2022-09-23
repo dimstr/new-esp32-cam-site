@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (user) {
             console.log("user logged in");
             console.log(user);
-            alert("LOG IN");
+            window.location.replace("https://dimstr.github.io/new-esp32-cam-site/dashboard");
             setupUI(user);
         } else {
             console.log("user logged out");
