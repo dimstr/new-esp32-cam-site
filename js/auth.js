@@ -8,15 +8,16 @@ document.addEventListener("DOMContentLoaded", function(){
             setupUI(user);
         } else {
             console.log("user logged out");
-  alert("   hn  ");
             setupUI();
         }
     });
+
+    // login
     const loginForm = document.querySelector('#login-form');
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         // get user info
-        const email = 'web@app.com';
+        const email = 'web@mail.com';
         const password = loginForm['input-password'].value;
         // log the user in
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     });
 
+    // logout
     const logout = document.querySelector('#logout-link');
     logout.addEventListener('click', (e) => {
     e.preventDefault();
