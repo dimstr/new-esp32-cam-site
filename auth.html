@@ -6,6 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCjEiC5bhZ7H6vo7nSJPzqi66i-M8_WB_8",
+            authDomain: "esp-camera-project.firebaseapp.com",
+            projectId: "esp-camera-project",
+            storageBucket: "esp-camera-project.appspot.com",
+            messagingSenderId: "114807843164",
+            appId: "1:114807843164:web:5d0d39a6f27de4db5c3999"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+    </script>
+
     <title>Document</title>
     <script>
         module.exports = {
@@ -25,26 +45,27 @@
 
             <div class="py-4"></div>
 
-            <div class="grid grid-cols-1 gap-6">
-                <label class="block">
-                    <input type="password" class="mt-1 block w-full rounded-md bg-gray-100
+            <form id="login-form">
+                <div class="grid grid-cols-1 gap-6">
+                    <label class="block">
+                        <input type="password" id="pas-input" class="mt-1 block w-full rounded-md bg-gray-100
                     dark:bg-zinc-800 border-transparent focus:border-gray-500 dark:focus:bg-zinc-700 focus:bg-white"
-                        placeholder="Введите пароль" />
-                </label>
-            </div>
+                            placeholder="Введите пароль" />
+                    </label>
+                </div>
 
-            <div class="py-4"></div>
+                <div class="py-4"></div>
 
-            <div class="flex justify-center">
-                <button
-                    class="bg-blue-600 hover:bg-blue-500 focus:ring px-4 py-2 font-semibold text-sm text-stone-100 rounded-full">
-                    Войти
-                </button>
-            </div>
-
+                <div class="flex justify-center">
+                    <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-500 focus:ring px-4 py-2 font-semibold text-sm text-stone-100 rounded-full">
+                        Войти
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
-
+    <script src="js/auth.js"></script>
 </body>
 
 </html>
