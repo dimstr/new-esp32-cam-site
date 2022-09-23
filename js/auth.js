@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
             setupUI(user);
         } else {
             console.log("user logged out");
+  Alert("   hn  ");
             setupUI();
         }
     });
