@@ -5,28 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  
-    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyCjEiC5bhZ7H6vo7nSJPzqi66i-M8_WB_8",
-      authDomain: "esp-camera-project.firebaseapp.com",
-      projectId: "esp-camera-project",
-      storageBucket: "esp-camera-project.appspot.com",
-      messagingSenderId: "114807843164",
-      appId: "1:114807843164:web:5d0d39a6f27de4db5c3999"
-    };
-    
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-  
-  </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <title>Проверка...</title>
+
     <script>
         tailwind.config = {
             theme: {
@@ -34,6 +18,8 @@
             }
         }
     </script>
+
+    <title>Проверка...</title>
 </head>
 
 <body class="dark bg-[url('backs/light.png')] dark:bg-[url('backs/dark.png')]">
@@ -51,7 +37,30 @@
 
         </div>
     </div>
-<script src="js/auth.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCjEiC5bhZ7H6vo7nSJPzqi66i-M8_WB_8",
+            authDomain: "esp-camera-project.firebaseapp.com",
+            projectId: "esp-camera-project",
+            storageBucket: "esp-camera-project.appspot.com",
+            messagingSenderId: "114807843164",
+            appId: "1:114807843164:web:5d0d39a6f27de4db5c3999"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                console.log("user logged in");
+                console.log(user);
+                window.location.replace("https://dimstr.github.io/new-esp32-cam-site/dashboard");
+            } else {
+                console.log("user logged out");
+                window.location.replace("https://dimstr.github.io/new-esp32-cam-site/auth");
+            }
+        });
+    </script>
 </body>
 
 </html>
