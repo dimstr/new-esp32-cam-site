@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <title>управление</title>
 
@@ -124,6 +125,47 @@
             if (user) {
                 console.log("user logged in");
                 console.log(user);
+                var storage = firebase.storage();
+                var storageRef = storage.ref();
+                var imgRef_01 = storageRef.child('data/photo_01.jpg');
+                var imgRef_02 = storageRef.child('data/photo_02.jpg');
+
+
+                firebase.auth().signInAnonymously().then(function () {
+                    imgRef_01.getDownloadURL().then(function (url_01) {
+                        document.getElementById('img_01').src = url_01;
+                    }).catch(function (error) {
+                        console.error(error);
+                    });
+                    imgRef_02.getDownloadURL().then(function (url_02) {
+                        document.getElementById('img_02').src = url_02;
+                    }).catch(function (error) {
+                        console.error(error);
+                    });
+                });
+
+                imgRef_01.getMetadata()
+                    .then((metadata) => {
+                        date = new Date(metadata.timeCreated);
+                        var time_01 = (date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+                        var writtenDate_01 = (date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear());
+                        document.getElementById("date-time_01").innerHTML = writtenDate_01 + " в " + time_01;
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+
+                imgRef_02.getMetadata()
+                    .then((metadata) => {
+                        date = new Date(metadata.timeCreated);
+                        var time_02 = (date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+                        var writtenDate_02 = (date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear());
+                        document.getElementById("date-time_02").innerHTML = writtenDate_02 + " в " + time_02;
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+
             } else {
                 console.log("user logged out");
                 window.location.replace("https://dimstr.github.io/new-esp32-cam-site/auth");
